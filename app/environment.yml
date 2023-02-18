@@ -11,6 +11,7 @@ dependencies:
   - matplotlib
   - seaborn
   - bokeh=3.0.3
+  - tornado=6.2
   - datashader
   - holoviews
   - colorcet
@@ -26,7 +27,8 @@ dependencies:
   - conda-forge::pygraphviz
   - huggingface::transformers
   - huggingface::datasets
+  - pip
   - pip:
-    - fasttext=0.9.2
-    - numpy --pre torch --index-url https://download.pytorch.org/whl/nightly/cu117 
-    - tweepy=4.12.1
+    - fasttext==0.9.2
+    - --index-url https://download.pytorch.org/whl/nightly/cu117 
+    - tweepy==4.12.1
