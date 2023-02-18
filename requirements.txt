@@ -1,5 +1,5 @@
-pygraphviz==1.10 --install-option=build_ext --global-option="/app/.heroku-buildpack-graphviz/usr/bin/"
 statsmodels==0.13.5
+pygraphviz==1.10 --install-option=build_ext --global-option="/app/.heroku-buildpack-graphviz/usr/bin/"
 bokeh==3.0.3
 brotlipy==0.7.0
 datasets==2.9.0
