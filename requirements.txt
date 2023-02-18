@@ -25,7 +25,7 @@ sacremoses==0.0.53
 seaborn==0.12.2
 sip==6.7.7
 statsmodels==0.13.5
---index-url https://download.pytorch.org/whl/nightly/cu117
+numpy --pre torch --index-url https://download.pytorch.org/whl/nightly/cu117
 transformers==4.26.1
 tweepy==4.12.1
 umap-learn==0.5.3
