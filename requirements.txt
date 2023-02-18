@@ -1,7 +1,6 @@
 backports.functools-lru-cache==1.6.4
 bokeh==3.0.3
 brotlipy==0.7.0
-dataclasses==0.8
 datasets==2.9.0
 datashader==0.14.4
 entrypoints==0.4
