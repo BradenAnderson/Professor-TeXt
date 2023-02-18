@@ -8,7 +8,6 @@ flit-core==3.8.0
 holoviews==1.12.7
 munkres==1.1.4
 nltk==3.8.1
-notebook==6.5.2
 openai==0.26.4
 openpyxl==3.1.1
 pandas-stubs==1.5.3.230214
