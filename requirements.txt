@@ -1,6 +1,5 @@
-statsmodels==0.13.5 --use-feature=no-binary-enable-wheel-cache
-pygraphviz==1.10 --global-option=build_ext --global-option="-L/app/.heroku-buildpack-graphviz/usr/bin/" --global-option="-R/app/.heroku-buildpack-graphviz/usr/bin/" 
-bokeh==3.0.3
+statsmodels==0.13.5
+git+git://github.com/pygraphviz/pygraphviz.git
 brotlipy==0.7.0
 datasets==2.9.0
 datashader==0.14.4
