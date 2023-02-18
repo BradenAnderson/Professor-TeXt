@@ -37,7 +37,6 @@ cycler==0.11.0
 cymem==2.0.7
 datasets==2.9.0
 datashader==0.14.3
-datashape==0.5.4
 debugpy==1.6.6
 decorator==5.1.1
 defusedxml==0.7.1
