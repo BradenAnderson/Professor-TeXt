@@ -35,8 +35,6 @@ contourpy==1.0.7
 cryptography==39.0.0
 cycler==0.11.0
 cymem==2.0.7
-dask==2023.1.1
-dataclasses==0.8
 datasets==2.9.0
 datashader==0.14.3
 datashape==0.5.4
