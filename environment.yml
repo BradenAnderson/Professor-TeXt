@@ -1,0 +1,33 @@
+name: capstone_heroku
+channels:
+  - conda-forge
+  - huggingface
+  - defaults
+dependencies:
+  - python=3.9
+  - cudatoolkit=11.7.0
+  - cudnn=8.4.1.50
+  - scikit-learn=1.2.0
+  - matplotlib
+  - seaborn
+  - bokeh=3.0.3
+  - datashader
+  - holoviews
+  - colorcet
+  - numpy=1.23.0
+  - pandas
+  - umap-learn
+  - statsmodels
+  - openai
+  - nltk
+  - ipykernel
+  - pip
+  - tqdm
+  - graphviz
+  - conda-forge::pygraphviz
+  - huggingface::transformers
+  - huggingface::datasets
+pip:
+  - fasttext=0.9.2
+  - numpy --pre torch --index-url https://download.pytorch.org/whl/nightly/cu117 
+  - tweepy=4.12.1
