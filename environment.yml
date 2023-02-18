@@ -21,7 +21,6 @@ dependencies:
   - openai
   - nltk
   - ipykernel
-  - pip
   - tqdm
   - graphviz
   - conda-forge::pygraphviz
