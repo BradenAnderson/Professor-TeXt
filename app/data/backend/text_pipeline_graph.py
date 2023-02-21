@@ -54,13 +54,15 @@ class TextPipelineGraph:
                      f"{hugging_face_embedding_type}\n"
                      f"Output Dims: {document_vector_shape}")
         else:
-            label = (f"{embedding_type} \n" 
+            label = (f"{embedding_type}\n" 
                      f"Output Dims: {document_vector_shape}")
 
         self.embedding_subgraph.add_node(n="embedding", 
                                          color="white", 
                                          shape="rect",
-                                         label=label)
+                                         label=label, 
+                                         labeljust="c", 
+                                         labelloc="t")
         return
     
     def add_cluster_nodes(self, scale_before_cluster, n_clusters, cluster_model):
@@ -70,22 +72,28 @@ class TextPipelineGraph:
             self.cluster_subgraph.add_node(n=f"clustering_{node_count}", 
                                            color="white", 
                                            shape="rect", 
-                                           label="Min-Max Scale \n(zero to one range)")
+                                           label="Min-Max Scale\n(zero to one range)", 
+                                           labeljust="c", 
+                                           labelloc="t")
             node_count += 1
 
         elif scale_before_cluster == "standard_scaler":
             self.cluster_subgraph.add_node(n=f"clustering_{node_count}", 
                                            color="white", 
                                            shape="rect", 
-                                           label="StandardScaler \n(zero mean, unit variance)")
+                                           label="StandardScaler\n(zero mean, unit variance)", 
+                                           labeljust="c", 
+                                           labelloc="t")
             node_count += 1
 
         cluster_string = cluster_model.__str__().split("(")[0]
-        label=f"{cluster_string} \n{n_clusters} clusters"
+        label=f"{cluster_string}\n{n_clusters} clusters"
         self.cluster_subgraph.add_node(n=f"clustering_{node_count}", 
                                        color="white", 
                                        shape="rect", 
-                                       label=label)                                   
+                                       label=label, 
+                                       labeljust="c", 
+                                       labelloc="t")                                   
         return 
     
     def add_dimreduce_nodes(self, scale_before_dim_reduce, reducer, partial_reducer, 
@@ -97,7 +105,9 @@ class TextPipelineGraph:
             self.dim_reduce_subgraph.add_node(n=f"reduce_{node_count}", 
                                               color="white", 
                                               shape="rect", 
-                                              label="Min-Max Scale\n(zero to one range)")
+                                              label="Min-Max Scale\n(zero to one range)", 
+                                              labeljust="c", 
+                                              labelloc="t")
             node_count += 1
 
         elif scale_before_dim_reduce == "standard_scaler":
@@ -105,34 +115,42 @@ class TextPipelineGraph:
             self.dim_reduce_subgraph.add_node(n=f"reduce_{node_count}", 
                                               color="white", 
                                               shape="rect", 
-                                              label="StandardScaler\n(zero mean, unit variance)")
+                                              label="StandardScaler\n(zero mean, unit variance)", 
+                                              labeljust="c", 
+                                              labelloc="t")
             node_count += 1
         
         if isinstance(reducer, Pipeline):
             step_one = partial_reducer.__str__().split("(")[0]
-            label = f"{step_one} \n\nOutput Dims: {partial_reduced_vectors.shape}"
+            label = f"{step_one}\nOutput Dims: {partial_reduced_vectors.shape}"
             self.dim_reduce_subgraph.add_node(n=f"reduce_{node_count}", 
                                               color="white", 
                                               shape="rect", 
-                                              label=label)
+                                              label=label, 
+                                              labeljust="c", 
+                                              labelloc="t")
             
             node_count += 1
 
             step_two = reducer.steps[-1][-1].__str__().split("(")[0]
-            label = f"{step_two} \n\nOutput Dims: {reduced_vectors.shape}"
+            label = f"{step_two}\nOutput Dims: {reduced_vectors.shape}"
             self.dim_reduce_subgraph.add_node(n=f"reduce_{node_count}", 
                                               color="white", 
                                               shape="rect", 
-                                              label=label)
+                                              label=label, 
+                                              labeljust="c", 
+                                              labelloc="t")
             node_count += 1
         else:
 
             step_one = reducer.__str__().split("(")[0]
-            label = f"{step_one} \n\nOutput Dims: {reduced_vectors.shape}"
+            label = f"{step_one}\nOutput Dims: {reduced_vectors.shape}"
             self.dim_reduce_subgraph.add_node(n=f"reduce_{node_count}", 
                                               color="white", 
                                               shape="rect", 
-                                              label=label)
+                                              label=label, 
+                                              labeljust="c", 
+                                              labelloc="t")
             node_count += 1
 
         return 
