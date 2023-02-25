@@ -92,7 +92,11 @@ class EmbeddingScatterPlot:
     
     def _get_tooltips(self, selections):
 
-        TOOLTIPS = '<div>'
+        TOOLTIPS = ('<div>'
+                    f'<div style="width:{selections["hover_window_width"]};">'
+                    f'<span style="font-size: {selections["hover_text_size"]}; font-weight: bold;">Text: </span>'
+                    f'<span style="font-size: {selections["hover_text_size"]};">@{{Txt}}</span><br>'
+                    '</div>')
         
         for column in self.hover_columns:
             col = (
